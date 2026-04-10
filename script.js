@@ -1,29 +1,29 @@
-const MY_KEY = 'AIzaSyDeO2kq5wOF4PM3gdcE6rC0bXq0DtxwL0M'; // Убедись, что это НОВЫЙ ключ
+const MY_KEY = 'AIzaSyDeO2kq5wOF4PM3gdcE6rC0bXq0DtxwL0M'; 
 
 async function askGemini(message) {
-const url = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${MY_KEY}`;
+    // В версии 2.0 используем путь v1beta и модель gemini-2.0-flash-exp или gemini-2.0-flash
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${MY_KEY}`;
     
     try {
         const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: [{ parts: [{ text: message }] }]
+                contents: [{ parts: [{ text: "Ты — Женя, ИИ-собеседник, созданный Ильёй (Ilyukha). Общайся просто, кратко, без лишнего пафоса. Вопрос: " + message }] }]
             })
         });
 
         const data = await response.json();
 
-        // Если пришла ошибка 400 или любая другая
-        if (!response.ok) {
-            console.error('Ошибка API:', data);
-            return "Ошибка от Гугла: " + (data.error ? data.error.message : 'Неизвестная ошибка 400');
+        if (response.ok && data.candidates && data.candidates[0]) {
+            return data.candidates[0].content.parts[0].text;
+        } else {
+            // Если модель 2.0 еще не доступна в твоем регионе, Гугл выдаст ошибку здесь
+            console.error('Ошибка:', data);
+            return "Ошибка API: " + (data.error ? data.error.message : "модель не ответила");
         }
 
-        return data.candidates[0].content.parts[0].text;
-
     } catch (e) {
-        console.error('Ошибка запроса:', e);
-        return "Женя вне зоны доступа. Проверь консоль.";
+        return "Женя ушел на перезагрузку...";
     }
 }

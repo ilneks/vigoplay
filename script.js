@@ -1,7 +1,7 @@
 const MY_KEY = 'AIzaSyDeO2kq5wOF4PM3gdcE6rC0bXq0DtxwL0M'; // Убедись, что это НОВЫЙ ключ
 
 async function askGemini(message) {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${MY_KEY}`;
+const url = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${MY_KEY}`;
     
     try {
         const response = await fetch(url, {

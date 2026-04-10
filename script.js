@@ -1,4 +1,4 @@
-const API_KEY = 'ВСТАВЬ_СВОЙ_КЛЮЧ_СЮДА'; // Тот самый ключ из шага 1
+const API_KEY = 'AIzaSyDeO2kq5wOF4PM3gdcE6rC0bXq0DtxwL0M'; // Тот самый ключ из шага 1
 const chatWindow = document.getElementById('chat-window');
 const inputField = document.getElementById('user-input');
 const sendBtn = document.getElementById('send-btn');

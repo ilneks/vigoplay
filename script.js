@@ -1,4 +1,4 @@
-// Твой новый ключ
+// Используем тот ключ, который ты дал последним
 const MY_KEY = 'AIzaSyDeO2kq5wOF4PM3gdcE6rC0bXq0DtxwL0M'; 
 
 const chatWindow = document.getElementById('chat-window');
@@ -11,39 +11,45 @@ async function askGemini(message) {
     try {
         const response = await fetch(url, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({
                 contents: [{
-                    parts: [{ text: "Ты — ИИ по имени Женя. Твой создатель — Илья (Ilyukha). Общайся как реальный человек, по-дружески, без официоза. Отвечай кратко. Вопрос: " + message }]
+                    parts: [{ text: message }]
                 }]
             })
         });
 
         const data = await response.json();
 
-        if (response.ok && data.candidates && data.candidates[0]) {
-            return data.candidates[0].content.parts[0].text;
-        } else {
-            console.error('Детали ошибки:', data);
-            return "Слушай, Илья, Гугл выдал ошибку: " + (data.error ? data.error.message : 'непонятки какие-то');
+        // Если Гугл вернул ошибку (код 400, 403 и т.д.)
+        if (data.error) {
+            console.error('Ошибка API:', data.error);
+            return `Ошибка от Гугла: ${data.error.message}`;
         }
+
+        // Если всё ок, выводим ответ
+        if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+            return data.candidates[0].content.parts[0].text;
+        }
+        
+        return "Женя в замешательстве... Ответ пустой.";
+
     } catch (e) {
-        console.error('Ошибка сети:', e);
-        return "Сеть барахлит, не могу достучаться до мозгов.";
+        console.error('Ошибка запроса:', e);
+        return "Не удалось отправить сообщение. Проверь консоль.";
     }
 }
 
-// Функция отрисовки сообщений
 function addMessage(sender, text) {
     const msgDiv = document.createElement('div');
-    msgDiv.classList.add('message');
-    msgDiv.classList.add(sender === 'Я' ? 'user-message' : 'ai-message');
+    msgDiv.style.marginBottom = "10px";
     msgDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
     chatWindow.appendChild(msgDiv);
     chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
-// Обработка клика
 sendBtn.onclick = async () => {
     const text = inputField.value.trim();
     if (!text) return;
@@ -51,20 +57,6 @@ sendBtn.onclick = async () => {
     addMessage('Я', text);
     inputField.value = '';
 
-    // Показываем, что Женя думает
-    const loadingMsg = document.createElement('div');
-    loadingMsg.className = 'message ai-message';
-    loadingMsg.innerText = 'Женя думает...';
-    chatWindow.appendChild(loadingMsg);
-
     const zhenyaReply = await askGemini(text);
-    
-    // Удаляем надпись "думает" и ставим реальный ответ
-    chatWindow.removeChild(loadingMsg);
     addMessage('Женя', zhenyaReply);
 };
-
-// Отправка по кнопке Enter
-inputField.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') sendBtn.click();
-});

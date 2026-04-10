@@ -1,4 +1,4 @@
-const MY_KEY = 'AIzaSyDeO2kq5wOF4PM3gdcE6rC0bXq0DtxwL0M'; 
+const MY_KEY = 'а вот хер тебе'; 
 
 async function askGemini(message) {
     // В версии 2.0 используем путь v1beta и модель gemini-2.0-flash-exp или gemini-2.0-flash

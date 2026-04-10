@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIGOPLAY | Команда Сервера</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --cherry-pink: #ffb7c5;
+            --neon-blue: #00d2ff;
+            --rank-owner: #ff4747;
+            --rank-tech: #3ae374;
+            --rank-admin: #fff200;
+        }
+
+        body {
+            margin: 0; font-family: 'Segoe UI', sans-serif;
+            background-color: #1a0b2e;
+            /* Вставь сюда свой фон image_2.png когда зальешь на хостинг */
+            background-image: linear-gradient(rgba(26, 11, 46, 0.8), rgba(15, 12, 41, 0.8)), 
+                              url('https://i.postimg.cc/9fRmB1gw/bg.jpg'); 
+            background-attachment: fixed; background-size: cover;
+            color: white; display: flex; justify-content: center; min-height: 100vh;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px; padding: 40px; text-align: center;
+            width: 95%; max-width: 900px; margin: 40px 0;
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+        }
+
+        h1 {
+            background: linear-gradient(45deg, var(--neon-blue), var(--cherry-pink));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-transform: uppercase; letter-spacing: 2px;
+        }
+
+        .team-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px; margin-top: 30px;
+        }
+
+        .team-item {
+            background: rgba(255, 255, 255, 0.03); border-radius: 20px;
+            padding: 20px; border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+        }
+
+        .team-item:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.07); }
+
+        .team-head {
+            width: 100px; height: 100px; border-radius: 50%;
+            margin-bottom: 15px; border: 2px solid var(--neon-blue);
+            object-fit: cover; background: #2a1b3d;
+        }
+
+        .admin-nick { font-size: 1.2rem; font-weight: bold; margin-bottom: 5px; }
+
+        .admin-rank {
+            font-size: 0.75rem; text-transform: uppercase; padding: 3px 10px;
+            border-radius: 8px; font-weight: bold; display: inline-block; margin-bottom: 15px;
+        }
+
+        .rank-owner { background: rgba(255, 71, 71, 0.2); color: var(--rank-owner); }
+        .rank-tech { background: rgba(58, 227, 116, 0.2); color: var(--rank-tech); }
+        .rank-admin { background: rgba(255, 242, 0, 0.2); color: var(--rank-admin); }
+
+        .contact-btn {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            text-decoration: none; color: var(--neon-blue); font-weight: bold;
+            background: rgba(0, 210, 255, 0.1); padding: 8px; border-radius: 10px;
+            transition: 0.3s; font-size: 0.9rem;
+        }
+
+        .contact-btn:hover { background: var(--neon-blue); color: #1a0b2e; }
+
+        .back-link { display: block; margin-top: 30px; color: rgba(255,255,255,0.5); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Команда VIGOPLAY</h1>
+    <div class="team-grid">
+
+        <div class="team-item">
+            <img src="https://i.postimg.cc/sgC7HnNJ/2026-04-07-23-44-30.png" alt="vigo_play" class="team-head">
+            <div class="admin-nick">vigo_play</div>
+            <span class="admin-rank rank-owner">Владелец сервера</span>
+            <a href="https://vk.com/vycheslavv" class="contact-btn"><i class="fab fa-vk"></i> Написать</a>
+        </div>
+
+        <div class="team-item">
+            <img src="https://i.postimg.cc/j2C4KL6R/2026-04-07-23-45-54.png" alt="ilneks_" class="team-head">
+            <div class="admin-nick">ilneks_</div>
+            <span class="admin-rank rank-tech">Технический админ</span>
+            <a href="https://vk.com/ilneks" class="contact-btn"><i class="fab fa-vk"></i> Написать</a>
+        </div>
+
+        <div class="team-item">
+            <img src="https://i.postimg.cc/9fWTCDVw/2026-04-07-23-42-55.png" alt="3ABTPA_STRIM" class="team-head">
+            <div class="admin-nick">3ABTPA_STRIM</div>
+            <span class="admin-rank rank-tech">Технический админ</span>
+            <a href="https://vk.com/dan4ik_tiktok" class="contact-btn"><i class="fab fa-vk"></i> Написать</a>
+        </div>
+
+        <div class="team-item">
+            <img src="https://i.postimg.cc/yW4g5dv0/2026-04-07-23-39-44.png" alt="poni_off" class="team-head">
+            <div class="admin-nick">poni_off</div>
+            <span class="admin-rank rank-admin">Администратор</span>
+            <a href="https://vk.com/ponioff" class="contact-btn"><i class="fab fa-vk"></i> Написать</a>
+        </div>
+
+        <div class="team-item">
+            <img src="https://i.postimg.cc/rw9j1XwW/2026-04-07-23-38-24.png" alt="LizokFinka" class="team-head">
+            <div class="admin-nick">LizokFinka</div>
+            <span class="admin-rank rank-admin">Администратор</span>
+            <a href="https://vk.com/ihateyoufriend" class="contact-btn"><i class="fab fa-vk"></i> Написать</a>
+        </div>
+
+        <div class="team-item">
+            <img src="https://i.postimg.cc/VNGFhqMF/2026-04-07-23-41-16.png" alt="mopsik_krut" class="team-head">
+            <div class="admin-nick">mopsik_krut</div>
+            <span class="admin-rank rank-admin">Модератор</span>
+            <a href="https://vk.com/maksyta0" class="contact-btn"><i class="fab fa-vk"></i> Написать</a>
+        </div>
+
+        <div class="footer-info">
+            <strong>Контакты и реквизиты:</strong><br>
+            Поддержка: <a href="https://vk.com/vycheslavv" target="_blank" style="color:var(--neon-blue)">vk.com/vycheslavv</a><br>
+            Email: Sliply1012@gmail.com <br>
+            ИНН: 561207378890
+        </div>
+
+    </div>
+    <a href="index.html" class="back-link">← На главную</a>
+</div>
+
+</body>
+</html>

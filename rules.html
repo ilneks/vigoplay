@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIGOPLAY | Полный свод правил</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --cherry-pink: #ffb7c5;
+            --neon-blue: #00d2ff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: #1a0b2e;
+            background-image: linear-gradient(rgba(26, 11, 46, 0.92), rgba(15, 12, 41, 0.92)), 
+                              url('https://i.postimg.cc/9fRmB1gw/bg.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+            z-index: 10;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin: 0;
+            background: linear-gradient(45deg, var(--neon-blue), var(--cherry-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .rules-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: var(--neon-blue);
+            font-size: 1.4rem;
+            border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+            padding-bottom: 8px;
+            margin: 35px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-transform: uppercase;
+        }
+
+        .section-title:first-child { margin-top: 0; }
+
+        .rule-item {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 14px 18px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            border-left: 3px solid var(--cherry-pink);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .rule-number {
+            font-weight: bold;
+            color: var(--cherry-pink);
+            margin-right: 6px;
+        }
+
+        .punishment {
+            display: block;
+            margin-top: 6px;
+            font-size: 0.8rem;
+            color: #ff5e5e;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 10px;
+            transition: 0.3s;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .back-btn:hover { background: var(--neon-blue); color: #1a0b2e; }
+
+        .leaf {
+            position: fixed;
+            top: -10%;
+            background: var(--cherry-pink);
+            border-radius: 100% 0 100% 0;
+            pointer-events: none;
+            z-index: 1;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg) translateX(0); }
+            100% { transform: translateY(110vh) rotate(360deg) translateX(100px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> На главную</a>
+        
+        <div class="header">
+            <h1>АКТУАЛЬНЫЙ СПИСОК ПРАВИЛ</h1>
+            <p style="color: var(--cherry-pink); opacity: 0.8; margin-top: 8px;">VIGOPLAY OFFICIAL SERVER</p>
+        </div>
+
+        <div class="rules-card">
+            <div class="section-title"><i class="fas fa-star"></i> 1. Основные положения</div>
+            <div class="rule-item"><span class="rule-number">1.1.</span> Играя на сервере VigoPlay, игрок тем самым соглашается со всеми правилами, перечисленными ниже.</div>
+            <div class="rule-item"><span class="rule-number">1.2.</span> Незнание правил не освобождает вас от ответственности.</div>
+            <div class="rule-item"><span class="rule-number">1.3.</span> Проектом управляет администрация в составе Главных администраторов (VigoPlay, Poni_off) и Администраторов. Администрация вправе наказать игрока по причине, не указанной в правилах.</div>
+            <div class="rule-item"><span class="rule-number">1.4.</span> Окончательное решение в спорных ситуациях остается за Администратором.</div>
+
+            <div class="section-title"><i class="fas fa-users"></i> 2. Поведение и коммуникация</div>
+            <div class="rule-item"><span class="rule-number">2.1.</span> Главная идея — создание дружественной общины. Придерживайтесь принципа взаимоуважения.</div>
+            <div class="rule-item">
+                <span class="rule-number">2.2.</span> Строго запрещено открытое PVP. Только по согласию и на арене.
+                <span class="punishment">Наказание: бан от 1 часа до 1 суток</span>
+            </div>
+            <div class="rule-item"><span class="rule-number">2.3.</span> Обмен предметами — на усмотрение сторон. Администрация не возвращает вещи при неудачном обмене.</div>
+            <div class="rule-item">
+                <span class="rule-number">2.4.</span> Запрещено грабить чужие сундуки и подписанные бочки без разрешения владельца.
+                <span class="punishment">Наказание: бан от 6 часов</span>
+            </div>
+            <div class="rule-item"><span class="rule-number">2.5.</span> Конфликты решаются между участниками. Можно привлечь медиатора через суд.</div>
+
+            <div class="section-title"><i class="fas fa-map-marked-alt"></i> 3. Размещение и приватность</div>
+            <div class="rule-item"><span class="rule-number">3.1.</span> Для получения территории обратитесь к poni_off.</div>
+            <div class="rule-item">
+                <span class="rule-number">3.2.</span> Запрещено строительство вплотную к чужим домам или вне выделенной зоны.
+                <span class="punishment">Наказание: снесение постройки</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">3.3.</span> Запрещено игнорировать просьбы владельца покинуть территорию (кроме админов).
+                <span class="punishment">Наказание: бан от 30 мин</span>
+            </div>
+
+            <div class="section-title"><i class="fas fa-warehouse"></i> 4. Ресурсы и общий склад</div>
+            <div class="rule-item"><span class="rule-number">4.1.</span> Общий склад в ратуше доступен только при условии восполнения ресурсов.</div>
+            <div class="rule-item">
+                <span class="rule-number">4.2.</span> Запрещено нарушать систему сортировки на складе.
+                <span class="punishment">Наказание: штраф</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">4.3.</span> Запрещено использование ресурсов общего склада для продажи.
+                <span class="punishment">Наказание: штраф</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">4.4.</span> Запрещены крафт, ношение и использование копья (Spear).
+                <span class="punishment">Наказание: бан от 1 часа</span>
+            </div>
+
+            <div class="section-title"><i class="fas fa-clock"></i> 5. Онлайн</div>
+            <div class="rule-item"><span class="rule-number">5.1.</span> Офлайн более 5 дней — дом подлежит сносу, ресурсы уходят в банк.</div>
+            <div class="rule-item"><span class="rule-number">5.2.</span> Офлайн более 10 дней — ресурсы на склад, ценности на аукцион.</div>
+
+            <div class="section-title"><i class="fas fa-bomb"></i> 6. Гриферство</div>
+            <div class="rule-item">
+                <span class="rule-number">6.1.</span> Запрещено разрушать/переделывать чужие постройки.
+                <span class="punishment">Наказание: бан от 3 часов</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">6.2.</span> Запрещено блокировать доступ к чужим сооружениям (стены, окопы и т.д.).
+                <span class="punishment">Наказание: штраф</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">6.3.</span> Запрещено заливать дома жидкостями или засыпать гравием.
+                <span class="punishment">Наказание: штраф</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">6.4.</span> Убийство игроков методами вне PVP-арены (лава, огонь) запрещено.
+                <span class="punishment">Наказание: бан от 1 часа до 1 суток</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">6.5.</span> Запрещено убивать чужих мирных животных.
+                <span class="punishment">Наказание: штраф + поиск замены</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">6.6.</span> Гриферство: первый раз 1-7 дней бана, рецидив — вечный бан.
+            </div>
+
+            <div class="section-title"><i class="fas fa-exclamation-triangle"></i> 7. Другое</div>
+            <div class="rule-item">
+                <span class="rule-number">7.1.</span> Использование читов запрещено.
+                <span class="punishment">Наказание: бан навсегда</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">7.2.</span> Создание лагов и падение сервера наказуемо.
+                <span class="punishment">Наказание: бан навсегда</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">7.3.</span> Запрещен вход со вторых/чужих аккаунтов.
+                <span class="punishment">Наказание: бан от 1 суток</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">7.4.</span> Запрещено обманывать администрацию и игроков.
+                <span class="punishment">Наказание: бан от 1 часа</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">7.5.</span> Запрещено создавать помеху комфортной игре других.
+                <span class="punishment">Наказание: бан/мут от 30 мин</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-number">7.6.</span> Запрещено строить ловушки и заманивать в них игроков.
+                <span class="punishment">Наказание: бан от 1 часа</span>
+            </div>
+            <div class="rule-item"><span class="rule-number">7.7.</span> Использование любого бага (багоюз) строго запрещено.</div>
+        </div>
+
+        <div class="footer-info">
+            <strong>Контакты и реквизиты:</strong><br>
+            Поддержка: <a href="https://vk.com/vycheslavv" target="_blank" style="color:var(--neon-blue)">vk.com/vycheslavv</a><br>
+            Email: Sliply1012@gmail.com <br>
+            ИНН: 561207378890
+    </div>
+
+    <script>
+        function createLeaf() {
+            const leaf = document.createElement('div');
+            leaf.classList.add('leaf');
+            const size = Math.random() * 8 + 4 + 'px';
+            leaf.style.width = size; leaf.style.height = size;
+            leaf.style.left = Math.random() * 100 + 'vw';
+            leaf.style.animationDuration = Math.random() * 5 + 3 + 's';
+            document.body.appendChild(leaf);
+            setTimeout(() => { leaf.remove(); }, 7000);
+        }
+        setInterval(createLeaf, 300);
+    </script>
+</body>
+</html>

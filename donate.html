@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIGOPLAY | Поддержать сервер</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --cherry-pink: #ffb7c5;
+            --neon-blue: #00d2ff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: #1a0b2e;
+            background-image: linear-gradient(rgba(26, 11, 46, 0.85), rgba(15, 12, 41, 0.85)), 
+                              url('https://i.postimg.cc/9fRmB1gw/bg.jpg');
+            background-repeat: no-repeat; background-position: center center;
+            background-attachment: fixed; background-size: cover;
+            color: white; display: flex; align-items: center; justify-content: center;
+            min-height: 100vh; width: 100%; overflow: hidden;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 30px; text-align: center;
+            width: 95%; max-width: 480px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            z-index: 10; animation: fadeIn 0.8s ease-out;
+            max-height: 95vh; overflow-y: auto;
+        }
+
+        /* Кастомный скролл для карточки */
+        .card::-webkit-scrollbar { width: 5px; }
+        .card::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 10px; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 1.8rem; margin: 0;
+            background: linear-gradient(45deg, var(--neon-blue), var(--cherry-pink));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-transform: uppercase; letter-spacing: 2px;
+        }
+
+        .info-text { 
+            color: rgba(255, 255, 255, 0.8); 
+            margin: 15px 0; 
+            line-height: 1.4; 
+            font-size: 0.9rem;
+        }
+
+        .price-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .price-tag {
+            font-size: 1.6rem; font-weight: 800; color: var(--cherry-pink);
+            margin: 5px 0; text-shadow: 0 0 10px rgba(255, 183, 197, 0.3);
+        }
+
+        .donate-btn {
+            display: flex; align-items: center; justify-content: center; gap: 15px;
+            background: linear-gradient(45deg, #00d2ff, #ffb7c5);
+            color: #1a0b2e; padding: 18px; border-radius: 20px;
+            text-decoration: none; font-size: 1.2rem; font-weight: 800;
+            transition: 0.4s; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border: none; width: 100%;
+        }
+
+        .donate-btn.disabled {
+            background: #444; color: #888; cursor: not-allowed;
+            transform: none !important; box-shadow: none !important; filter: grayscale(1);
+        }
+
+        .donate-btn:not(.disabled):hover {
+            transform: scale(1.03) translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 210, 255, 0.4);
+        }
+
+        .agreement-area { margin: 15px 0; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); }
+        .agreement-area a { color: var(--neon-blue); text-decoration: none; }
+
+        .footer-info {
+            font-size: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+            margin-top: 15px;
+            opacity: 0.7;
+            text-align: left;
+        }
+
+        .back-link {
+            display: inline-block; margin-top: 15px;
+            color: rgba(255, 255, 255, 0.5); text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .leaf {
+            position: fixed; top: -10%; background: var(--cherry-pink);
+            border-radius: 100% 0 100% 0; pointer-events: none; z-index: 1;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg) translateX(0); }
+            100% { transform: translateY(110vh) rotate(360deg) translateX(100px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <i class="fas fa-crown" style="font-size: 40px; color: var(--neon-blue); margin-bottom: 10px;"></i>
+        <h1>ПОДДЕРЖКА VIGOPLAY</h1>
+        
+        <div class="info-text">
+            Цифровые товары для Minecraft сервера. Выберите услугу:
+        </div>
+
+        <div class="price-container">
+            <div class="price-tag">VIP статус — 200 ₽</div>
+            <div class="price-tag">Префикс — 50 ₽</div>
+        </div>
+
+        <div class="info-text" style="font-size: 0.8rem;">
+            <strong>Доставка:</strong> Автоматически в течение 24ч после подтверждения в ВК.
+        </div>
+
+        <div class="agreement-area">
+            <input type="checkbox" id="eula-check" onchange="toggleBtn()"> 
+            Я согласен с <a href="eula.html">офертой и правилами</a>
+        </div>
+
+        <a href="https://yoomoney.ru/to/4100119490988193" target="_blank" class="donate-btn disabled" id="pay-btn">
+            <i class="fas fa-wallet"></i> ОПЛАТИТЬ
+        </a>
+
+        <div class="footer-info">
+            <strong>Контакты и реквизиты:</strong><br>
+            Поддержка: <a href="https://vk.com/vycheslavv" target="_blank" style="color:var(--neon-blue)">vk.com/vycheslavv</a><br>
+            Email: Sliply1012@gmail.com <br>
+            ИНН: 561207378890
+        </div>
+
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> На главную</a>
+    </div>
+
+    <script>
+        function createLeaf() {
+            const leaf = document.createElement('div');
+            leaf.classList.add('leaf');
+            const size = Math.random() * 10 + 5 + 'px';
+            leaf.style.width = size; leaf.style.height = size;
+            leaf.style.left = Math.random() * 100 + 'vw';
+            leaf.style.animationDuration = Math.random() * 4 + 3 + 's';
+            document.body.appendChild(leaf);
+            setTimeout(() => { leaf.remove(); }, 6000);
+        }
+        setInterval(createLeaf, 250);
+
+        function toggleBtn() {
+            const check = document.getElementById('eula-check');
+            const btn = document.getElementById('pay-btn');
+            if(check.checked) {
+                btn.classList.remove('disabled');
+                btn.style.pointerEvents = 'auto';
+            } else {
+                btn.classList.add('disabled');
+                btn.style.pointerEvents = 'none';
+            }
+        }
+        document.getElementById('pay-btn').style.pointerEvents = 'none';
+    </script>
+</body>
+</html>

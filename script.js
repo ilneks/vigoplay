@@ -1,4 +1,4 @@
-const MY_KEY = 'а вот хер тебе'; 
+const MY_KEY = 'secret'; 
 
 async function askGemini(message) {
     // В версии 2.0 используем путь v1beta и модель gemini-2.0-flash-exp или gemini-2.0-flash
